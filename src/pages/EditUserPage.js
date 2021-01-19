@@ -64,7 +64,7 @@ const useStyles = makeStyles((theme) => ({
     },
 
     input: {
-        width: "100%",
+        width: "180%",
         height: "50px",
         padding: "5px",
         borderRadius: "5px",
