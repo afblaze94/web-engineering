@@ -1,0 +1,96 @@
+{
+    "id": "8MwcWMEEmd5nouWLt0kO",
+    "seller": "OX0FECei3bMPsDRpG23ozKnt0wn2",
+    "shipFrom": "Penang",
+    "category": "Face Masks",
+    "brand": "FVSurgical",
+    "stock": "69",
+    "price": "8",
+    "sellerName": "Dummy Dummy",
+    "name": "Type I Surgical Mask",
+    "desc": "3ply face mask, disposable"
+}
+{
+    "id": "LkAHtHlICb0VkC6vq9Ho",
+    "category": "Thermometer",
+    "price": "26",
+    "sellerName": "Dummy Dummy",
+    "seller": "OX0FECei3bMPsDRpG23ozKnt0wn2",
+    "brand": "Microlife",
+    "name": "Digital Thermometer",
+    "desc": "Lifetime guarantee. 60 seconds technology.",
+    "stock": "40",
+    "shipFrom": "Johor",
+}
+{
+    "id": "MvB7XfmKoHjkQtr7Htxc",
+    "brand": "Funkybrain Solutions",
+    "shipFrom": "Selangor",
+    "sellerName": "Dummy Dummy",
+    "name": "Type IIR Surgical Mask",
+    "stock": "112",
+    "category": "Face Masks",
+    "price": "25",
+    "seller": "kwn2efZVMOSpHLqpktTXejU4YZV2",
+    "desc": "polypropylene, disposable"
+}
+{
+    "id": "az4oLLuMKfTmMvHeQsLB",
+    "category": "Medicine",
+    "price": "7",
+    "seller": "kwn2efZVMOSpHLqpktTXejU4YZV2",
+    "stock": "105",
+    "shipFrom": "Perak",
+    "sellerName": "Dummy Dummy",
+    "name": "Panadol Actifast",
+    "brand": "GlaxoSmithKline",
+    "desc": "Panadol ActiFast caplets contain Paracetamol which relieves pain and fever"
+}
+{
+    "id": "dE0wVdSBdAFX47Kv7366",
+    "seller": "OX0FECei3bMPsDRpG23ozKnt0wn2",
+    "sellerName": "Dummy Dummy",
+    "desc": "Disposable Latex , Powder Free, Good elasticity and durability",
+    "shipFrom": "Kuala Lumpur",
+    "brand": "TN STAR",
+    "name": "Nitrile Disposable Gloves Powder Free",
+    "stock": 1000,
+    "category": "Gloves",
+    "price": 12
+}
+{
+    "id": "f5aj9sKMeVyHpzWQOmjm",
+    "shipFrom": "China",
+    "desc": "Simple operation, Convenient reading, Three-color backlight",
+    "price": "65",
+    "stock": "70",
+    "brand": "Omron",
+    "category": "Thermometer",
+    "name": "Infrared Forehead Thermometer",
+    "seller": "OX0FECei3bMPsDRpG23ozKnt0wn2",
+    "sellerName": "Dummy Dummy",
+}
+{
+    "id": "hTMmBtAbiBWJRj8MyY2V",
+    "category": "Face Masks",
+    "seller": "OX0FECei3bMPsDRpG23ozKnt0wn2",
+    "shipFrom": "Penang",
+    "stock": "56",
+    "desc": "3ply face mask, disposable",
+    "brand": "FVSurgical",
+    "price": "16",
+    "name": "Type II Surgical Mask",
+    "sellerName": "Dummy Dummy"
+}
+{
+    "id": "ogPqegl4Qk0w7KeWmI88",
+    "seller": "OX0FECei3bMPsDRpG23ozKnt0wn2",
+    "name": "Germ-X Hand Sanitizer",
+    "stock": "90",
+    "category": "Hand Sanitizers",
+    "price": "99",
+    "desc": "Original, 32 Fl Oz (Pack of 4), 128 Fl Oz",
+    "sellerName": "Dummy Dummy",
+    "shipFrom": "USA",
+    "brand": "Germ-X"
+}

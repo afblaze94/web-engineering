@@ -1,0 +1,60 @@
+{
+  "name": "osmes",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@material-ui/core": "^4.11.0",
+    "@material-ui/icons": "^4.9.1",
+    "@testing-library/jest-dom": "^5.11.5",
+    "@testing-library/react": "^11.1.1",
+    "@testing-library/user-event": "^12.2.0",
+    "classlist.js": "^1.1.20150312",
+    "firebase": "^8.0.2",
+    "material-ui-dropzone": "^3.5.0",
+    "material-ui-search-bar": "^1.0.0",
+    "node-sass": "^4.14.1",
+    "react": "^16.8.0",
+    "react-custom-scrollbars": "^4.2.1",
+    "react-dom": "^16.8.0",
+    "react-google-button": "^0.7.1",
+    "react-images": "^1.1.7",
+    "react-notifications": "^1.7.2",
+    "react-redux": "^7.2.2",
+    "react-redux-firebase": "^3.7.0",
+    "react-responsive-carousel": "^3.2.11",
+    "react-router-dom": "^5.2.0",
+    "react-scripts": "4.0.0",
+    "react-toastify": "^6.1.0",
+    "reactjs-popup": "^2.0.4",
+    "redux": "^4.0.5",
+    "redux-devtools-extension": "^2.13.8",
+    "redux-firestore": "^0.14.0",
+    "redux-thunk": "^2.3.0",
+    "uuid": "^8.3.2",
+    "web-vitals": "^0.2.4"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}
