@@ -65,6 +65,8 @@ export default function SignupPage() {
     password: "",
     phone: "",
     gender: "female",
+    lastView: "Face Masks",
+    lastSecondView: "",
   });
   const classes = useStyles();
   const history = useHistory();

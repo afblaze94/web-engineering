@@ -21,31 +21,15 @@ import ButtonAppBar from "../ButtonAppBar";
 
 export default ({history,location}) => {
 
+  console.log("location", location.state);
   var searchQuery = JSON.stringify(location.state);
+  console.log("searchQuery", searchQuery);
   var query = searchQuery.substring(11, searchQuery.length - 2);
 
-
-   // const filteredProducts = products.filter(products => {
-  //   return products.name.toLowerCase().includes(search.toLowerCase())
-  // })
-
-  //console.log("quert", searchQuery);
-  
-  //  filteredProducts = products.filter((products) => {
-  //   return (
-  //     products.name
-  //       .toLowerCase()
-  //       .indexOf(this.state.search.toLowerCase()) !== -1
-  //   );
-  // });
-
-  
-
-  
   return (
     <React.Fragment>
       <CssBaseline />
-      {/* <ButtonAppBar /> */} 
+      {/* <ButtonAppBar />  */}
       {/* cannot put app bar because cannot read the search query after it rerendered */}
       <Container component="main">
         <div>
@@ -54,5 +38,4 @@ export default ({history,location}) => {
       </Container>
     </React.Fragment>
   );
-
 }

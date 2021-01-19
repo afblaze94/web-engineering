@@ -31,47 +31,47 @@ function Copyright() {
   }
 
 const useStyles = makeStyles((theme) => ({
-  root: {
-    marginTop: theme.spacing(8),
-    display: "flex",
-    flexDirection: "column",
-    alignItems: "center",
-  },
-  form: {
-    width: "100%", // Fix IE 11 issue.
-    marginTop: theme.spacing(3),
-  },
-  formControl: {
-    width: "100%",
-  },
-  submit: {
-    margin: theme.spacing(3, 0, 2),
-  },
-  link: {
-    display: "block",
-    width: "auto",
-    height: "110%",
-  },
-  logoNew: {
-    display: "block",
-    width: "50%",
-    height: "50%",
-    padding: "20px 50px 10px 50px",
-  },
+    root: {
+        marginTop: theme.spacing(8),
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+    },
+    form: {
+        width: "100%", // Fix IE 11 issue.
+        marginTop: theme.spacing(3),
+    },
+    formControl: {
+        width: "100%",
+    },
+    submit: {
+        margin: theme.spacing(3, 0, 2),
+    },
+    link: {
+        display: "block",
+        width: "auto",
+        height: "110%",
+    },
+    logoNew: {
+        display: "block",
+        width: "50%",
+        height: "50%",
+        padding: "20px 50px 10px 50px",
+    },
 
-  label: {
-    
-  },
+    label: {
+        
+    },
 
-  input: {
-    width: "100%",
-    height: "50px",
-    padding: "5px",
-    borderRadius: "5px",
-    borderWidth: "1px",
-    fontSize: "16px",
-    borderColor: "#004cf0"
-  },
+    input: {
+        width: "180%",
+        height: "50px",
+        padding: "5px",
+        borderRadius: "5px",
+        borderWidth: "1px",
+        fontSize: "16px",
+        borderColor: "#003cbd"
+    },
 }));
 
 
@@ -80,6 +80,9 @@ export default function EditUserPage() {
         firstName: "",
         lastName: "",
         phone: "",
+        gender: "",
+        lastView: "",
+        lastSecondView: "",
     });
 
     const auth = useSelector((state) => state.firebase.profile);
@@ -90,9 +93,9 @@ export default function EditUserPage() {
 
     useFirestoreConnect([
         {
-          collection: "users",
-          doc: id,
-          storeAs: "ep",
+            collection: "users",
+            doc: id,
+            storeAs: "ep",
         },
     ]);
 
@@ -102,11 +105,12 @@ export default function EditUserPage() {
                 firstName: auth.firstName,
                 lastName: auth.lastName,
                 phone: auth.phone,
+                gender: auth.gender,
+                lastView: auth.lastView,
+                lastSecondView: auth.lastSecondView,
           });
         }
-      }, [auth]);
-
-    
+    }, [auth]);
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -126,36 +130,18 @@ export default function EditUserPage() {
             <ButtonAppBar />
             <Container component="main" maxWidth="xs">
                 <div className={classes.root}>
-                    {/* <Grid align="center">
-                        <NavLink position="static" className={classes.link} to="/">
-                            <img
-                            alt="osmes"
-                            src={"images/logo.png"}
-                            className={classes.logoNew}
-                            />
-                            
-                        </NavLink> 
-                    </Grid> */}
                     <Typography component="h1" variant="h4" align="center">
                         <h4>Profile Management</h4>
                     </Typography>
                     <form className={classes.form} noValidate onSubmit={handleSubmit}>
                         <Grid container spacing={2} >
                             <Grid item xs={12} >
-                            <Typography variant="body2" color="textSecondary" align="left">
-                                {"First Name*"}
-                            </Typography>
+                                <Typography variant="body2" color="textSecondary" align="left">
+                                    {"First Name*"}
+                                </Typography>
                                 <label>
                                     <input className={classes.input} type="text" id="firstName" name="firstName" defaultValue={auth.firstName} onChange={handleChange} />
                                 </label>
-                                {/* <TextField
-                                    label="First Name"
-                                    id="firstName"
-                                    required
-                                    fullWidth
-                                    defaultvalue={auth.firstName}
-                                    onChange={handleChange}
-                                    /> */}
                             </Grid>
                             <Grid item xs={12} >
                                 <Typography variant="body2" color="textSecondary" align="left" >
@@ -164,14 +150,6 @@ export default function EditUserPage() {
                                 <label>
                                     <input className={classes.input} type="text" id="lastName" name="lastName" defaultValue={auth.lastName} onChange={handleChange} />
                                 </label>
-                                {/* <TextField
-                                    label="Last Name"
-                                    id="lastName"
-                                    required
-                                    fullWidth
-                                    defaultvalue={auth.lastName}
-                                    onChange={handleChange}
-                                    /> */}
                             </Grid>
                             <Grid item xs={12} >
                                 <Typography variant="body2" color="textSecondary" align="left">
@@ -180,16 +158,7 @@ export default function EditUserPage() {
                                 <label>
                                     <input className={classes.input} type="text" id="phone" name="phone" defaultValue={auth.phone} on onChange={handleChange} />
                                 </label>
-                                {/* <TextField
-                                    label="Phone"
-                                    id="phone"
-                                    required
-                                    fullWidth
-                                    defaultvalue={auth.phone}
-                                    onChange={handleChange}
-                                    /> */}
                             </Grid>
-
                             {/* <Grid item xs={12}>
                                 <FormControl component="fieldset">
                                     <FormLabel component="legend">Gender</FormLabel>

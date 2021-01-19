@@ -10,7 +10,7 @@ import TableBody from "@material-ui/core/TableBody";
 import TableCell from "@material-ui/core/TableCell";
 import TableContainer from "@material-ui/core/TableContainer";
 import TableRow from "@material-ui/core/TableRow";
-
+import { Height } from '@material-ui/icons';
 
 
 const useStyles = makeStyles((theme) => ({
@@ -20,14 +20,16 @@ const useStyles = makeStyles((theme) => ({
         alignItems: "center",
     },
     media: {
-        height: 50,
+        paddingRight: '100%',
+        width: 10,
+        height: 10,
         paddingTop: '100%',
-      },
-    root: {
-        maxWidth: 400,
-        maxHeight: 430,
-        width: 250,
-        height:430,
+    },
+      root: {
+        maxWidth: 360,
+        maxHeight: 700,
+        width: 155,
+        height: 290
     },
 }));
 
@@ -38,42 +40,32 @@ const BlueTextTypography = withStyles({
 })(Typography);
 
 
-const ProductSummary = ({products}) => {
+const RecommendProductSummary = ({products}) => {
     const classes = useStyles();
-    //console.log(products);
     return (
         <React.Fragment>
             <CssBaseline />
             <Container component="main">
                 <div className={classes.main}>
-                    <Grid container spacing={2} justify="center">
-                        <Grid item xs={10} key={products.id}>
+                    <Grid container spacing={1}>
+                        <Grid item xs={1} key={products.id}>
                             <Card  className={classes.root}>
                                 <CardMedia
-                                    className={classes.media}
-                                    image= {products.images?products.images[0].url:null}
-                                    title= {products.name}
+                                className={classes.media}
+                                image= {products.images?products.images[0].url:null}
+                                title= {products.name}
                                 />
                                 <CardContent>
-                                    <div style={{height:"70px"}}>
-                                        <Typography gutterBottom variant="h5" component="h2" align="center">
-                                            {products.name.slice(0, 35)}
-                                        </Typography>
-                                    </div>
-                                    <div style={{height:"65px"}}>
-                                        <Typography
-                                            variant="body2"
-                                            color="textSecondary"
-                                            component="p"
-                                            >
-                                            {products.desc.slice(0, 87)   } 
+                                    <div style={{height:"90px", align:"center"}}>
+                                        <Typography gutterBottom variant="h5" component="h2" align="center" style={{fontSize:"20px"}}>
+                                            {products.name.slice(0, 43)}
                                         </Typography>
                                     </div>
                                     <Typography
                                         variant="body2"
                                         color="textSecondary"
                                         component="p"
-                                        >
+                                    >
                                         <b>RM: {products.price} </b>
                                     </Typography>
                                 </CardContent>
@@ -86,4 +78,4 @@ const ProductSummary = ({products}) => {
     )
 }
 
-export default ProductSummary
+export default RecommendProductSummary
