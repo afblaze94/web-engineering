@@ -23,7 +23,7 @@
     "react-redux-firebase": "^3.7.0",
     "react-responsive-carousel": "^3.2.11",
     "react-router-dom": "^5.2.0",
-    "react-scripts": "4.0.0",
+    "react-scripts": "^4.0.0",
     "react-toastify": "^6.1.0",
     "reactjs-popup": "^2.0.4",
     "redux": "^4.0.5",

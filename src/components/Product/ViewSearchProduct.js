@@ -13,12 +13,15 @@ import firebase from "../../configs/firebaseConfig";
 import { Link } from "react-router-dom";
 import { Card, CardContent, Grid, Typography } from "@material-ui/core";
 import Container from "@material-ui/core/Container";
+import ButtonAppBar from "../ButtonAppBar";
+import { useHistory, useParams, Redirect, NavLink } from "react-router-dom";
+
 
 class ViewProduct extends React.Component {
     constructor() {
         super();
         this.state = {
-        search: "",
+            search: "",
         };
     }
 
@@ -28,67 +31,57 @@ class ViewProduct extends React.Component {
 
     render() {
         const x = this.props.keyword;
-
         if (this.state.search === "") {
             this.state.search = x;
         }
 
-    console.log("search query",this.state.search)
-    let filteredProducts = this.props.products.filter((products) => {
-        return (
-            products.name
-            .toLowerCase()
-            .indexOf(this.state.search.toLowerCase()) !== -1
-        );
-    });
+        //console.log("search query",this.state.search)
+        let filteredProducts = this.props.products.filter((products) => {
+            return (
+                products.name
+                .toLowerCase()
+                .indexOf(this.state.search.toLowerCase()) !== -1
+            );
+        });
 
         return (
             <div>
+                <Grid align="center">
+                    <NavLink position="static" to="/" style={{width:"40%", height:"40%", display: "block"}}>
+                        <img
+                        alt="osmes"
+                        src={"images/logo.png"}
+                        style={{width:"50%", height:"50%", display: "block", padding: "20px 50px 10px 50px"}}
+                        />
+                    </NavLink> 
+                </Grid>
                 <div
                     style={{
                     display: "flex",
                     justifyContent: "center",
                     alignItems: "center",
                     }}
-                >
+                    >
                     <h2>Search Results</h2>
                 </div>
-                {/* <div style={{ paddingLeft: "150px" }}>
-                    <input
-                    style={{ width: "250px", paddingLeft: "80px" }}
-                    type="text"
-                    placeholder="Product Name"
-                    value={this.state.search}
-                    onChange={this.updateSearch.bind(this)}
-                    />
-                    <input
-                    style={{ width: "250px", paddingLeft: "80px" }}
-                    type="text"
-                    placeholder="Product Name"
-                    value={this.props.keyword}
-                    onMouseOverCapture={this.updateSearch.bind(this)}
-                    onChange={this.updateSearch.bind(this)}
-                    />
-                </div> */}
                 <div>
-                    {/* <ProductList products = {products} /> */}
                     <Container component="main">
-                    <div>
-                        <Grid container spacing={2} justify="center">
-                        {/* {products && products.map(products => { */}
-                        {filteredProducts &&
-                            filteredProducts.map((products) => {
-                            return (
-                                <Link to={"/product/" + products.id}>
-                                <ProductSummary
-                                    products={products}
-                                    key={products.id}
-                                />
-                                </Link>
-                            );
-                            })}
-                        </Grid>
-                    </div>
+                        <div>
+                            <Grid container spacing={2} justify="center">
+                                {filteredProducts &&
+                                    filteredProducts.map((products) => {
+                                        return (
+                                            <Link to={"/product/" + products.id} style={{ textDecoration: 'none' }}>
+                                                <ProductSummary
+                                                    products={products}
+                                                    key={products.id}
+                                                />
+                                            </Link>
+                                        );
+                                    }
+                                )}
+                            </Grid>
+                        </div>
                     </Container>
                 </div>
             </div>

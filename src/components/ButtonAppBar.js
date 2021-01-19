@@ -15,6 +15,7 @@ import SignOutLink from "./layout/SignOutLink";
 import ViewProduct from "./Product/ViewProduct";
 import Container from "@material-ui/core/Container";
 import ProductSummary from "./Product/ProductSummary";
+import Trending from "./Product/Trending"
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -26,10 +27,6 @@ const useStyles = makeStyles((theme) => ({
     height: "130px",
   },
   logo: {
-    // display: "none",
-    // [theme.breakpoints.up("sm")]: {
-    //   display: "block"
-    // }
     display: "block",
     width: "auto",
     height: "80%",
@@ -46,6 +43,16 @@ const useStyles = makeStyles((theme) => ({
     width: "auto",
     height: "110%",
   },
+  
+  inputInput: {
+    padding: theme.spacing(1, 1, 1, 0),
+    paddingLeft: `calc(1em + ${theme.spacing(7)}px)`,
+    transition: theme.transitions.create('width'),
+    width: '100%',
+    [theme.breakpoints.up('md')]: {
+      width: '20ch',
+    },
+  },
 }));
 
 export default function ButtonAppBar() {
@@ -61,50 +68,12 @@ export default function ButtonAppBar() {
   const filteredProducts = useSelector(
     (state) => state.firestore.ordered.products
   );
-  // console.log("fil",filteredProducts);
   const history = useHistory();
 
   const updateSearch = (e) => {
     setSearch(e.target.value);
   };
 
-  const getSearch = (e) => {
-    e.preventDefault();
-    console.log(search);
-    const x = "8MwcWMEEmd5nouWLt0kO";
-    let path = "searchProduct/" + search;
-    //let path = "Product/"+x;
-    console.log("to push", path);
-    history.push(path);
-
-    //setQuery(search);
-    // return (
-    //   <div>
-    //     helloooooooooooooooooooooooo
-    //     <Container component="main">
-    //            <div>
-    //             <Grid container spacing={2} justify="center">
-    //               {filteredProducts &&
-    //                 filteredProducts.map((products) => {
-    //                   return (
-    //                     <Link to={"/product/" + products.id}>
-    //                       <ProductSummary
-    //                         products={products}
-    //                         key={products.id}
-    //                       />
-    //                     </Link>
-    //                   );
-    //                 })}
-    //             </Grid>
-    //           </div>
-    //         </Container>
-    //   </div>
-    // );
-  };
-
-  // handleChange = (e) =>{
-  //   console.log(e)
-  // }
   var logoURL = "images/logo.png";
 
   if (history.location.pathname !== "/") {
@@ -124,13 +93,14 @@ export default function ButtonAppBar() {
           {/* //press ther image then will navigate to homepage */}
           {/* <img src={"images/logo.png"} alt="tms" className={classes.logo} /> */}
           <Grid container spacing={1} style={{ margin: "0px 0px 0px 30px" }}>
-            <Grid item xs={12}>
+            {/* <Grid item xs={12}>
               {trending.map((str, i) => (
                 <div key={i} style={{ display: "inline", marginRight: "30px" }}>
                   {str}
                 </div>
               ))}
-            </Grid>
+            </Grid> */}
+                <Trending/>
             <Grid item xs={12}>
               {/* <SearchBar
                 type = "text"
@@ -145,16 +115,18 @@ export default function ButtonAppBar() {
                 className="App"
               >
                 <input
-                  className="search-bar"
+                  className={
+                    classes.inputInput
+                  }
                   type="text"
                   placeholder="Product Name"
                   value={search}
                   onChange={updateSearch}
+                 style={{width:"240px", borderRadius:"3px", borderWidth:"0px"}}
                 ></input>
               </form>
             </Grid>
           </Grid>
-
           {isLoaded(auth) && !isEmpty(auth) ? <SignInLink /> : <SignOutLink />}
         </Toolbar>
       </AppBar>
